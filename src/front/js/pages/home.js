@@ -81,57 +81,57 @@ export const Home = () => {
 
     return (
         <div className="container home">
-        <div className="text-center mt-0">
-            <div className="carrusel-home mb-3">
-                <CarruselHome />
+            <div className="text-center mt-0">
+                <div className="carrusel-home mb-3">
+                    <CarruselHome />
+                </div>
+                <h2>Selección de Tiendas</h2>
+                <p>Aquí podrás encontrar una variedad de tiendas de tu barrio</p>
+                <CategoriasTiendas onCategoriaChange={handleCategoriaTiendasChange} />
+                <div className="categorias-home container-fluid mb-5">
+                    <Carousel
+                        responsive={responsive}
+                        customLeftArrow={<CustomLeftArrow />}
+                        customRightArrow={<CustomRightArrow />}
+                    >
+                        {filteredTiendas.map((tienda) => (
+                            <TodasTiendas
+                                nombre_tienda={tienda.nombre_tienda}
+                                key={tienda.id}
+                                id={tienda.id}
+                                url_imagen_tienda={tienda.url_imagen_tienda}
+                                descripcion_tienda={tienda.descripcion_tienda}
+                                direccion_tienda={tienda.direccion_tienda}
+                                isFavorito={tienda.isFavorito}
+                            />
+                        ))}
+                    </Carousel>
+                </div>
+                <h2>Selección de Productos</h2>
+                <p>Aquí podrás encontrar una variedad de productos de tu barrio</p>
+                <CategoriasTodosProductos onCategoriaChange={handleCategoriaProductosChange} />
+                <div className="categorias-home container-fluid mb-5">
+                    <Carousel
+                        responsive={responsive}
+                        customLeftArrow={<CustomLeftArrow />}
+                        customRightArrow={<CustomRightArrow />}
+                    >
+                        {filteredProductos.map((producto) => (
+                            <TodosProductos
+                                nombre_producto={producto.nombre_producto}
+                                key={producto.id}
+                                id={producto.id}
+                                url_imagen_producto={producto.url_imagen_producto}
+                                descripcion_producto={producto.descripcion_producto}
+                                precio={producto.precio}
+                                tienda_id={producto.tienda_id}
+                                nombre_tienda={producto.nombre_tienda}
+                                isFavorito={producto.isFavorito}
+                            />
+                        ))}
+                    </Carousel>
+                </div>
             </div>
-            <h2>Selección de Tiendas</h2>
-            <p>Aquí podrás encontrar una variedad de tiendas de tu barrio</p>
-            <CategoriasTiendas onCategoriaChange={handleCategoriaTiendasChange} />
-            <div className="categorias-home container-fluid mb-5">
-                <Carousel 
-                    responsive={responsive} 
-                    customLeftArrow={<CustomLeftArrow />} 
-                    customRightArrow={<CustomRightArrow />}
-                >
-                    {filteredTiendas.map((tienda) => (
-                        <TodasTiendas 
-                            nombre_tienda={tienda.nombre_tienda} 
-                            key={tienda.id} 
-                            id={tienda.id} 
-                            url_imagen_tienda={tienda.url_imagen_tienda} 
-                            descripcion_tienda={tienda.descripcion_tienda} 
-                            direccion_tienda={tienda.direccion_tienda}
-                            isFavorito={tienda.isFavorito}  
-                        />
-                    ))}
-                </Carousel>
-            </div>
-            <h2>Selección de Productos</h2>
-            <p>Aquí podrás encontrar una variedad de productos de tu barrio</p>
-            <CategoriasTodosProductos onCategoriaChange={handleCategoriaProductosChange} />
-            <div className="categorias-home container-fluid mb-5">
-                <Carousel 
-                    responsive={responsive} 
-                    customLeftArrow={<CustomLeftArrow />} 
-                    customRightArrow={<CustomRightArrow />}
-                >
-                    {filteredProductos.map((producto) => (
-                        <TodosProductos 
-                            nombre_producto={producto.nombre_producto} 
-                            key={producto.id} 
-                            id={producto.id} 
-                            url_imagen_producto={producto.url_imagen_producto} 
-                            descripcion_producto={producto.descripcion_producto} 
-                            precio={producto.precio} 
-                            tienda_id={producto.tienda_id} 
-                            nombre_tienda={producto.nombre_tienda}
-                            isFavorito={producto.isFavorito} 
-                        />
-                    ))}
-                </Carousel>
-            </div>
-        </div>
         </div>
     );
 };

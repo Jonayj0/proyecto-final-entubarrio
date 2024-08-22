@@ -4,6 +4,7 @@ import "../../styles/creartienda.css";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import Cloudinary from "../component/cloudinary.jsx";
 
 
 export const CrearTienda = () => {
@@ -84,6 +85,7 @@ export const CrearTienda = () => {
                         onChange={(event) => { setUrl_Imagen_Tienda(event.target.value); setErrorMessage(''); }}
                     />
                 </div>
+                <Cloudinary onImageUpload={setUrl_Imagen_Tienda} /> {/* Pasamos la función que actualiza la URL */}
                 <button type="submit" className="guardar btn btn-primary">Guardar</button>
 
             </form>
