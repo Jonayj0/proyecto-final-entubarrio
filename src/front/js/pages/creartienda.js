@@ -27,23 +27,24 @@ export const CrearTienda = () => {
             setErrorMessage("Por favor, completa todos los campos.");
             return; // Detener la ejecución si algún campo está vacío
         }
-        
+
         actions.crearTienda(
             nombre_tienda,
             descripcion_tienda,
             categoria_tienda,
             direccion_tienda,
             url_imagen_tienda, navigate)
-            .then(response => {console.log(response);
+            .then(response => {
+                console.log(response);
                 Swal.fire({
                     position: "top-end",
                     icon: "success",
                     title: response,
                     showConfirmButton: false,
                     timer: 1500
-                  });
+                });
             })
-            .catch (error => {
+            .catch(error => {
                 console.error(error)
                 Swal.fire({
                     title: 'Error!',
@@ -55,7 +56,7 @@ export const CrearTienda = () => {
     }
 
     return (
-        <div className="container pt-5 pb-5" style={{backgroundColor:"#def4f5"}}>
+        <div className="container pt-5 pb-5" style={{ backgroundColor: "#def4f5" }}>
             <h1 className="title-crear-tienda">Crea tu tienda</h1>
             <form onSubmit={handleSubmit} >
                 {errorMessage && <div className="alert alert-danger">{errorMessage}</div>}
@@ -85,9 +86,11 @@ export const CrearTienda = () => {
                         onChange={(event) => { setUrl_Imagen_Tienda(event.target.value); setErrorMessage(''); }}
                     />
                 </div>
-                <Cloudinary onImageUpload={setUrl_Imagen_Tienda} /> {/* Pasamos la función que actualiza la URL */}
+                {/* <div className="mb-3">
+                    <label htmlFor="imageUrl" className="form-label">Imagen</label>
+                    <Cloudinary onImageUpload={setUrl_Imagen_Tienda} />
+                </div> */}
                 <button type="submit" className="guardar btn btn-primary">Guardar</button>
-
             </form>
             <Link to="/login">
                 <span className="mt-3 mb-0 h5">Vuelve al registro</span>

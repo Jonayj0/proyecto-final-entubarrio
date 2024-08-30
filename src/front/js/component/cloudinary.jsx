@@ -8,7 +8,6 @@ const Cloudinary = ({ onImageUpload }) => {
 
     const [ image, setImage ] = useState('');       //12 Creamos estado local que guarde la url de la imagen subida
     const [ loading, setLoading ] = useState(false) //7 Creamos un estado local con valor incial boolean "false" para saber si la imagen esta cargando.
-  
 
     const uploadImage = async (e)=>{            //2 Preparamos para recibir el evento al ejecutarse la función async
         const files = e.target.files            //3 recuperamos el array de e.target.files
@@ -36,32 +35,32 @@ const Cloudinary = ({ onImageUpload }) => {
 
     }
 
-  return (
-    <div>
-        <h1>Upload Image</h1>
+    return (
+        <div>
+            <h1>Upload Image</h1>
 
-        {/*1 - El siguiente input type file envia la imagen por el evento al handler uploadImage */}
+            {/*1 - El siguiente input type file envia la imagen por el evento al handler uploadImage */}
 
-        <input type="file"
-        name="file"
-        placeholder='Upload an image'
-        // accept='image/png, image/jpeg' 
-        onChange={(e)=>uploadImage(e)}
-        />
+            <input type="file"
+            name="file"
+            placeholder='Upload an image'
+            // accept='image/png, image/jpeg' 
+            onChange={(e)=>uploadImage(e)}
+            />
 
-        {/* ------------------------------------------------------------------------------------ */}
+            {/* ------------------------------------------------------------------------------------ */}
 
 
-        {/* 9 - Si loading true, Mostramos Loading, si no mostramos la imagen la cual su url deberia estar cargada en un estado local */}
-        {loading ? (
-            <h3>Loading...</h3>
-        ) : (
-        <img src={image} alt="imagen subida"/>
-        )}
-        {/* ------------------------------------------------------------------------------------ */}
+            {/* 9 - Si loading true, Mostramos Loading, si no mostramos la imagen la cual su url deberia estar cargada en un estado local */}
+            {loading ? (
+                <h3>Loading...</h3>
+            ) : (
+            <img src={image} alt="imagen subida" style={{ "maxWidth": "50%" }}/>
+            )}
+            {/* ------------------------------------------------------------------------------------ */}
 
-    </div>
-  );
+        </div>
+    );
 }
 
 export default Cloudinary
