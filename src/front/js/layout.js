@@ -23,6 +23,7 @@ import { PaginaTiendas } from "./pages/paginatiendas";
 import { CreateUser } from "./pages/createuser";
 import { EditarProducto } from "./pages/editarProducto";
 import { EditarTienda } from "./pages/editartienda";
+import { Reservas } from "./pages/reservas";
 
 
 //create your first component
@@ -55,6 +56,7 @@ const Layout = () => {
                         <Route element={<EditarProducto />} path="/editarproducto" />
                         <Route element={<EditarTienda />} path="/editartienda" />
                         <Route element={<Favoritos />} path="/favoritos" />
+                        <Route element={<Reservas />} path="/reservas" />
                     </Routes>
                     <Footer />
                 </ScrollToTop>

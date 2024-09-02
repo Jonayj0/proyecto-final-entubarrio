@@ -79,7 +79,7 @@ export const Navbar = () => {
                                                     <Link className="dropdown-item" to="/datos-usuario">Mis datos</Link>
                                                 </li>
                                                 <li>
-                                                    <Link className="dropdown-item" to="/another-action">Reservas</Link>
+                                                    <Link className="dropdown-item" to="/reservas">Reservas</Link>
                                                 </li>
                                                 <li>
                                                     <Link
