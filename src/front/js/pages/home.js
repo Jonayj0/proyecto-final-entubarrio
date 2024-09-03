@@ -110,7 +110,7 @@ export const Home = () => {
                 <h2>Selección de Productos</h2>
                 <p>Aquí podrás encontrar una variedad de productos de tu barrio</p>
                 <CategoriasTodosProductos onCategoriaChange={handleCategoriaProductosChange} />
-                <div className="categorias-home container-fluid mb-5">
+                <div className="categorias-home container-fluid mb-5 ms-4">
                     <Carousel
                         responsive={responsive}
                         customLeftArrow={<CustomLeftArrow />}

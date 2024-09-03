@@ -1,12 +1,45 @@
-footer{
+/* Estilo general para el footer */
+footer {
     background-color: #FFDE7D;
+    padding: 20px;
 }
 
+/* Estilo general para la imagen del logo */
 .logo-footer {
-    width: 100px;   
+    width: 100px;
     height: auto;
     margin-top: 1em;
     margin-left: 1em;
 }
+
+/* Estilo general para los enlaces del footer */
+.footer .nav-link {
+    font-size: 1rem; /* Tamaño de fuente para pantallas grandes */
+    color: black; /* Color del texto */
+    text-decoration: none;
+}
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 768px) {
+    .footer .nav-link h6 {
+        font-size: 0.875rem; /* Reducir tamaño de fuente en pantallas pequeñas */
+    }
+
+    .logo-footer {
+        width: 80px; /* Reducir el tamaño del logo en pantallas pequeñas */
+    }
+}
+
+/* Media query para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    .footer .nav-link h6 {
+        font-size: 0.75rem; /* Reducir aún más el tamaño de fuente en pantallas muy pequeñas */
+    }
+
+    .logo-footer {
+        width: 60px; /* Reducir más el tamaño del logo en pantallas muy pequeñas */
+    }
+}
+
 
 
