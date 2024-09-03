@@ -7,6 +7,8 @@
 */
 .home{
     background-color: #def4f5;
+    margin-bottom: 0px;
+    padding-bottom: 20px;
 }
 .imagen-barrio {
     width: 70%;
